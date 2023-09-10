@@ -17,9 +17,6 @@ data = pd.read_csv('Vegetable_market.csv')
 print("\nTHIS IS THE PROVIDED VEGETABLE DATA:\n")
 print(data)
 
-#This will show the information about data:
-#print(data.info())
-
 #PREPROCESSING:
 def onehot_encode(df, column):
     df = df.copy()
@@ -76,15 +73,10 @@ def preprocess_inputs(df):
 
 X_train, X_test, y_train, y_test = preprocess_inputs(data)
 
-#print(X_train)
-
-#print(y_train)
-
 #TESTING:
 print("\n\nTRAINING THE MODELS: ")
 models = {
     "                     Linear Regression": LinearRegression(),
-#   "                   K-Nearest Neighbors": KNeighborsRegressor(),
     "                         Decision Tree": DecisionTreeRegressor(),
     "                         Random Forest": RandomForestRegressor(),
     "                     Gradient Boosting": GradientBoostingRegressor()
